@@ -2,7 +2,7 @@
   <span>Book Shop</span>
   <br>
   <br>
-  <img src="screenshot.png" alt="bookshop" width="95%">
+  <img src="screenshot.png" alt="bookshop" width="80%">
 </h1>
 
 
