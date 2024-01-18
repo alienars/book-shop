@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>-->
+    <link id="bsh-themeid" href="css/main.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/jquery-ui.min.css">-->
+    <!--<link href="css/main.css" rel="stylesheet">-->
+    <!--<script src="https://cdn.rawgit.com/icons8/titanic/master/dist/js/titanic.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.5.9/bodymovin.min.js"></script>-->
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: IRANSansWeb;
+            src: url('fonts/IRANSansWeb.woff2') format('truetype');
+            font-display: fallback;
+        }
+        *{
+            font-family: IRANSansWeb;
+        }
+
+        .slidecontainer {
+            width: 100%;
+            margin: 15px 0 0 0;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #a7a7a7;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #9079d4;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #9079d4;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+
+</head>
+<body id="f-body" onload="lb()">
+
+
+
+<div class="bsh-topFixLine"></div>
+
+<div class="bsh-topMiniMenuMain">
+    <ul class="bsh-topMiniMenuUl">
+        <li class="bsh-topMiniMenuLi"><a class="bsh-topMiniMenuA" href="javascript:">خانه</a></li>
+        <li class="bsh-topMiniMenuLi"><a class="bsh-topMiniMenuA" href="javascript:">درباره ما</a></li>
+        <li class="bsh-topMiniMenuLi"><a class="bsh-topMiniMenuA" href="javascript:">سوالات</a></li>
+        <li class="bsh-topMiniMenuLi"><a class="bsh-topMiniMenuA" href="javascript:">راهنما</a></li>
+    </ul>
+    <div class="bsh-btnColorMain">
+        <a onclick="theme()" class="bsh-btnColorIcoA" href="javascript:" data-toggle="tooltip" data-placement="right" title="رنگ قالب"><span class="fa fa-tint bsh-btnColorIco"></span></a>
+    </div>
+</div>
+<div class="bsh-topMiddMenuMain">
+    <img class="bsh-middMenuLogo" src="images/logo2d.png"/>
+    <div class="bsh-middMenuSeaMain">
+        <div class="bsh-MiddMenuSeaBtn">
+            <a class="bsh-MiddMenuSeaBtnA" href="javascript:"><span class="fa fa-search bsh-MiddMenuSeaBtnIco"></span></a>
+        </div>
+        <input class="bsh-topMiddMenuSeaInput" type="text" />
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light container-fluid f-mainNav1 sticky-top bsh-bsNavMain">
+    <!--<a class="navbar-brand" href="#"><img src="img/flobb.png" id="f-navLogo1"/></a>&lt;!&ndash;<span class="badge badge-info">VER 2</span>&ndash;&gt;-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="direction: rtl;text-align: right;">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="dropdown bsh-userMain">
+        <a class="fa fa-user dropdown-toggle bsh-userMainA" href="javascript:" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="bsh-userATxt">  حساب من</span></a>
+        <div class="dropdown-menu bsh-userDropMain" aria-labelledby="dropdownMenuButton1">
+            <span class="bsh-userDropInTxt">ورود</span>
+            <input class="bsh-userDropInInput0" placeholder="نام کاربری" type="text" />
+            <input class="bsh-userDropInInput1" placeholder="رمز عبور" type="password" />
+            <button class="bsh-userDropInBtn"><a class="bsh-userDropInBtnA" href="javascript:">ورود</a></button>
+            <div class="dropdown-divider bsh-bsNavDropDiv"></div>
+            <span><a class="bsh-userDropUpA" href="javascript:">عضویت</a></span>
+        </div>
+        <!--<div class="dropdown-menu bsh-userDropMain" aria-labelledby="dropdownMenuButton1">-->
+        <!--<img class="bsh-userDropInedImg" src="images/male.png" />-->
+        <!--<span class="bsh-userDropInedTxt">Amir Kiani</span>-->
+        <!--<div class="bsh-userDropInedBtn"><a class="bsh-userDropInedA" href="#">تنظیمات کاربری</a></div>-->
+        <!--<div class="bsh-userDropInedBtn"><a class="bsh-userDropInedA" href="#">تغییر اطلاعات</a></div>-->
+        <!--<div class="bsh-userDropInedBtn"><a class="bsh-userDropInedA" href="#">تاریخچه سفارش ها</a></div>-->
+        <!--<div class="bsh-userDropInedBtn"><a class="bsh-userDropInedA" href="#">پیگیری سفارش</a></div>-->
+        <!--</div>-->
+    </div>
+    <div class="dropdown bsh-basketMain" >
+        <a class="fa fa-shopping-basket bsh-basketA" href="javascript:" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="bsh-basketATxt">  سبد خرید</span><span class="badge badge-dark bsh-basketANum">0</span></a>
+        <div class="dropdown-menu bsh-basketDropMain" aria-labelledby="dropdownMenuButton1">
+            <span class="bsh-basketDropEmp">خالی</span>
+        </div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            </li>
+        </ul>
+
+        <ul class="navbar-nav my-2 my-lg-0 bsh-bsNavUl">
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript:" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    کتب درسی
+                </a>
+                <div class="dropdown-menu f-navDrop bsh-bsNavDrop" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item bsh-bsNavDropItem" href="javascript:">اول</a>
+                    <a class="dropdown-item bsh-bsNavDropItem" href="javascript:">دوم</a>
+                    <div class="dropdown-divider bsh-bsNavDropDiv"></div>
+                    <a class="dropdown-item bsh-bsNavDropItem" href="javascript:">دیگر</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    کتب عمومی
+                </a>
+                <div class="dropdown-menu f-navDrop bsh-bsNavDrop" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item bsh-bsNavDropItem" href="javascript:">اول</a>
+                    <a class="dropdown-item bsh-bsNavDropItem" href="javascript:">دوم</a>
+                    <div class="dropdown-divider bsh-bsNavDropDiv"></div>
+                    <a class="dropdown-item bsh-bsNavDropItem" href="javascript:">دیگر</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    کتب انگلیسی
+                </a>
+                <div class="dropdown-menu f-navDrop bsh-bsNavDrop" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item bsh-bsNavDropItem" href="javascript:">اول</a>
+                    <a class="dropdown-item bsh-bsNavDropItem" href="javascript:">دوم</a>
+                    <div class="dropdown-divider bsh-bsNavDropDiv"></div>
+                    <a class="dropdown-item bsh-bsNavDropItem" href="javascript:">دیگر</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="bsh-modules">
+
+    <nav class="bsh-brcrMain-sea" aria-label="breadcrumb">
+        <ol class="breadcrumb bsh-brcrOl-sea">
+            <li class="breadcrumb-item"><a class="bsh-brcrItemA-sea" href="#">خانه</a></li>
+            <li class="breadcrumb-item active" aria-current="page">جست وجو</li>
+        </ol>
+    </nav>
+
+    <div class="col-md-12 row bsh-resMainM-sea"><!--padding: 15px 0 10px 0;margin: 0 0 15px 0;-->
+
+        <div class="col-md-2 row bsh-resMainR-sea">
+
+            <div id="accordion" class="bsh-accordMain-sea">
+                <div class="card bsh-card-sea">
+                    <div class="card-header bsh-cardHead-sea" id="headingOne">
+                        <h5 class="mb-0">
+                            <a class="btn bsh-cHA-sea" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                انتشارات
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <!--<div class="form-group">-->
+                                <!--<label for="exampleFormControlSelect1" class="bsh-txt-sea">انتخاب : </label>-->
+                                <!--<select class="form-control form-control-sm" id="exampleFormControlSelect1">-->
+                                    <!--<option>1</option>-->
+                                    <!--<option>2</option>-->
+                                    <!--<option>3</option>-->
+                                    <!--<option>4</option>-->
+                                    <!--<option>5</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1" class="bsh-txt-sea">نام ناشر : </label>
+                                <select multiple class="form-control" id="exampleFormControlSelect2">
+                                    <option>همه</option>
+                                    <option>انتشارات</option>
+                                    <option>انتشارات</option>
+                                    <option>انتشارات</option>
+                                    <option>انتشارات</option>
+                                    <option>انتشارات</option>
+                                    <option>انتشارات</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card bsh-card-sea">
+                    <div class="card-header bsh-cardHead-sea" id="headingTwo">
+                        <h5 class="mb-0">
+                            <a class="btn bsh-cHA-sea" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                قطع
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <label for="exampleFormControlSelect1" class="bsh-txt-sea">اندازه کتاب : </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label bsh-radi-sea" for="inlineRadio1">جلد</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <label class="form-check-label bsh-radi-sea" for="inlineRadio2">جلد</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bsh-card-sea">
+                    <div class="card-header bsh-cardHead-sea" id="headingThree">
+                        <h5 class="mb-0">
+                            <a class="btn bsh-cHA-sea" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                قیمت
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="slidecontainer">
+                                <label for="exampleFormControlSelect1" class="bsh-txt-sea" id="demo1">شروع از 50000</label>
+                                <input onchange="range1()" type="range" min="1" max="100" value="50" class="slider" id="myRange1">
+                            </div>
+
+                            <div class="slidecontainer">
+                                <label for="exampleFormControlSelect1" class="bsh-txt-sea" id="demo2">پایان تا 50000</label>
+                                <input onchange="range2()" type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn col-12 bsh-btnSea-sea" style="">جست و جو</div>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-10 bsh-resMainL-sea">
+
+            <div class="row bsh-resMain-sea">
+
+                <div class="bsh-scItemMain-sea">
+                    <div class="bsh-scItem-sea">
+                        <img class="bsh-scItemImg" src="images/wn.jpg">
+                        <span class="bsh-scItemName">نینجای سفید</span>
+                        <span class="bsh-scItemDes">اریک ون لوستبادر</span>
+                        <a class="bsh-scItemA" href="javascript:"></a>
+                        <div class="bsh-scItemBtnMain">
+                            <a class="bsh-scItemBtnA" href="javascript:">
+                                <div class="bsh-scItemBtn">
+                                    <span class="fa fa-shopping-basket bsh-scItemBtnIco"></span>
+                                </div>
+                                <div class="bsh-scItemBtnPrice">
+                                    <span class="bsh-scItemBtnPriceTxt">75,000</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bsh-scItemMain-sea">
+                    <div class="bsh-scItem-sea">
+                        <img class="bsh-scItemImg" src="images/wn.jpg">
+                        <span class="bsh-scItemName">نینجای سفید</span>
+                        <span class="bsh-scItemDes">اریک ون لوستبادر</span>
+                        <a class="bsh-scItemA" href="javascript:"></a>
+                        <div class="bsh-scItemBtnMain">
+                            <a class="bsh-scItemBtnA" href="javascript:">
+                                <div class="bsh-scItemBtn">
+                                    <span class="fa fa-shopping-basket bsh-scItemBtnIco"></span>
+                                </div>
+                                <div class="bsh-scItemBtnPrice">
+                                    <span class="bsh-scItemBtnPriceTxt">75,000</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bsh-scItemMain-sea">
+                    <div class="bsh-scItem-sea">
+                        <img class="bsh-scItemImg" src="images/wn.jpg">
+                        <svg class="bsh-scItemSvgMain" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 100" xml:space="preserve">
+                                <g>
+                                    <path class="bsh-scItemSvg" d="M1004,100H0V86C111.6,46.9,286.1,0.3,503.5,0.5C719.4,0.7,892.8,47,1004,86C1004,90.7,1004,95.3,1004,100z"/>
+                                </g>
+                            </svg>
+                        <span class="bsh-scItemPercent">%35</span>
+                        <span class="bsh-scItemNamePer">نینجای سفید</span>
+                        <span class="bsh-scItemDesPer">اریک ون لوستبادر</span>
+                        <a class="bsh-scItemA" href="javascript:"></a>
+                        <div class="bsh-scItemBtnMainPer">
+                            <a class="bsh-scItemBtnA" href="javascript:">
+                                <div class="bsh-scItemBtn">
+                                    <span class="fa fa-shopping-basket bsh-scItemBtnIco"></span>
+                                </div>
+                                <div class="bsh-scItemBtnPricePer">
+                                    <span class="bsh-scItemBtnPriceTxtOf">95,000</span>
+                                    <span class="bsh-scItemBtnPriceTxtOff">75,000</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bsh-scItemMain-sea">
+                    <div class="bsh-scItem-sea">
+                        <img class="bsh-scItemImg" src="images/wn.jpg">
+                        <svg class="bsh-scItemSvgMain" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 100" xml:space="preserve">
+                                <g>
+                                    <path class="bsh-scItemSvg" d="M1004,100H0V86C111.6,46.9,286.1,0.3,503.5,0.5C719.4,0.7,892.8,47,1004,86C1004,90.7,1004,95.3,1004,100z"/>
+                                </g>
+                            </svg>
+                        <span class="bsh-scItemPercent">%35</span>
+                        <span class="bsh-scItemNamePer">نینجای سفید</span>
+                        <span class="bsh-scItemDesPer">اریک ون لوستبادر</span>
+                        <a class="bsh-scItemA" href="javascript:"></a>
+                        <div class="bsh-scItemBtnMainPer">
+                            <a class="bsh-scItemBtnA" href="javascript:">
+                                <div class="bsh-scItemBtn">
+                                    <span class="fa fa-shopping-basket bsh-scItemBtnIco"></span>
+                                </div>
+                                <div class="bsh-scItemBtnPricePer">
+                                    <span class="bsh-scItemBtnPriceTxtOf">95,000</span>
+                                    <span class="bsh-scItemBtnPriceTxtOff">75,000</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="bsh-scItemMain-sea">
+                    <div class="bsh-scItem-sea">
+                        <img class="bsh-scItemImgUn" src="images/wn.jpg">
+                        <span class="bsh-scItemName">نینجای سفید</span>
+                        <span class="bsh-scItemDes">اریک ون لوستبادر</span>
+                        <a class="bsh-scItemA" href="javascript:"></a>
+                        <div class="bsh-scItemBtnMainUn">
+                            <a class="bsh-scItemBtnA" href="javascript:">
+                                <div class="bsh-scItemBtnPriceUn">
+                                    <span class="bsh-scItemBtnPriceTxtUn">ناموجود</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bsh-scItemMain-sea">
+                    <div class="bsh-scItem-sea">
+                        <img class="bsh-scItemImgUn" src="images/wn.jpg">
+                        <span class="bsh-scItemName">نینجای سفید</span>
+                        <span class="bsh-scItemDes">اریک ون لوستبادر</span>
+                        <a class="bsh-scItemA" href="javascript:"></a>
+                        <div class="bsh-scItemBtnMainUn">
+                            <a class="bsh-scItemBtnA" href="javascript:">
+                                <div class="bsh-scItemBtnPriceUn">
+                                    <span class="bsh-scItemBtnPriceTxtUn">ناموجود</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link bsh-pagiA-sea" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link bsh-pagiActiveA-sea" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link bsh-pagiA-sea" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link bsh-pagiA-sea" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link bsh-pagiA-sea" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="bsh-footerTopMain">
+    <div class="bsh-footerLogoMain">
+        <img class="bsh-footerLogo" src="images/logo2d.png">
+    </div>
+    <div class="row bsh-footerLinkMain">
+        <ul class="bsh-fooLinkUl0">
+            <li class="bsh-fooLinkLiT">خدمات مشتریان</li>
+            <li class="bsh-fooLinkLi"><a class="bsh-fooLinkLiA" href="javascript:">پرسش های متداول</a></li>
+            <li class="bsh-fooLinkLi"><a class="bsh-fooLinkLiA" href="javascript:">بازگرداندن کتاب</a></li>
+            <li class="bsh-fooLinkLi"><a class="bsh-fooLinkLiA" href="javascript:">شرایط استفاده</a></li>
+            <li class="bsh-fooLinkLi"><a class="bsh-fooLinkLiA" href="javascript:">حریم خصوصی</a></li>
+        </ul>
+        <ul class="bsh-fooLinkUl1">
+            <li class="bsh-fooLinkLiT">خدمات مشتریان</li>
+            <li class="bsh-fooLinkLi"><a class="bsh-fooLinkLiA" href="javascript:">پرسش های متداول</a></li>
+            <li class="bsh-fooLinkLi"><a class="bsh-fooLinkLiA" href="javascript:">بازگرداندن کتاب</a></li>
+            <li class="bsh-fooLinkLi"><a class="bsh-fooLinkLiA" href="javascript:">شرایط استفاده</a></li>
+            <li class="bsh-fooLinkLi"><a class="bsh-fooLinkLiA" href="javascript:">حریم خصوصی</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="bsh-topMiniMenuMain">
+    <div class="bsh-btnArrowMain">
+        <a class="bsh-btnArrowIcoA" href="javascript:"><span class="fa fa-arrow-up bsh-btnArrowIco"></span></a>
+    </div>
+    <ul class="bsh-topMiniMenuUl">
+        <li class="bsh-topMiniMenuLi"><a class="bsh-topMiniMenuA" href="javascript:">خانه</a></li>
+        <li class="bsh-topMiniMenuLi"><a class="bsh-topMiniMenuA" href="javascript:">درباره ما</a></li>
+        <li class="bsh-topMiniMenuLi"><a class="bsh-topMiniMenuA" href="javascript:">سوالات</a></li>
+        <li class="bsh-topMiniMenuLi"><a class="bsh-topMiniMenuA" href="javascript:">راهنما</a></li>
+    </ul>
+</div>
+
+<div class="bsh-copyright">Copyright © Flob.ir 2018</div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script>
+    // var fWindowsHeight=$( window ).height();
+    // var fWindowsWidth=$( window ).width();
+    // var fWindowsHeightHalf=(fWindowsHeight-60)/2;
+    //
+    // $(".bsh-loadingMain").css({"height": fWindowsHeight,"padding-top": fWindowsHeightHalf});
+    //
+    // // if (fWindowsWidth<=575){
+    // //     $('#f-cardTopImg').attr("src","img/phoneslider0ssb.png");
+    // // }
+    //
+    // function lb() {
+    //
+    //     $("#f-pageBefore").animate({
+    //         backgroundColor: "#ecf0f1"
+    //     },000, function(){/*time=3000*/
+    //         $("#f-mainPage").css({"display":""});
+    //         $(this).attr("id","f-pageAfter");
+    //         $("#f-pageAfter").css({"display":""});
+    //
+    //
+    //     });
+    // }
+
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        spaceBetween: 0,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+
+    $(document).ready(function(){
+        $('.customer-logos').slick({
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
+    });
+
+
+    var swiper = new Swiper('.swiper-containers', {
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        freeMode: true,
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        mousewheel: true,
+    });
+
+
+    $('.bsh-btnArrowIcoA').click(function() {      // When arrow is clicked
+        $('body,html').animate({
+            scrollTop : 0                       // Scroll to top of body
+        }, 800);
+    });
+
+
+
+    var slider0 = document.getElementById("myRange1");
+    function range1(){
+        // console.log(slider.value);
+        $("#myRange1").attr("value",slider0.value);
+        var str0 = slider0.value;
+        var str01 = "000";
+        var rese = str0.concat(str01);
+        var str1 = "شروع از ";
+        var str2 = rese;
+        var res = str1.concat(str2);
+        $("#demo1").html(res);
+    }
+
+    var slider1 = document.getElementById("myRange2");
+    function range2(){
+        // console.log(slider.value);
+        $("#myRange2").attr("value",slider1.value);
+        var strr0 = slider1.value;
+        var strr01 = "000";
+        var reser = strr0.concat(strr01);
+        var strr1 = "پایان تا ";
+        var strr2 = reser;
+        var resr = strr1.concat(strr2);
+        $("#demo2").html(resr);
+    }
+
+    // var slider = document.getElementById("myRange");
+    // var output = document.getElementById("demo");
+    // output.innerHTML = slider.value;
+
+    // slider.oninput = function() {
+    //     output.innerHTML = this.value;
+    //
+    // }
+
+
+
+
+    // $( function() {
+    //     $( "#slider-range" ).slider({
+    //         range: true,
+    //         min: 0,
+    //         max: 500,
+    //         values: [ 75, 300 ],
+    //         slide: function( event, ui ) {
+    //             $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+    //         }
+    //     });
+    //     $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+    //         " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+    // } );
+
+
+
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+
+
+    function theme() {
+        var themeNow = $("#bsh-themeid").attr("href");
+        if(themeNow === "css/main.css"){
+            $("#bsh-themeid").attr("href","css/mainDark.css");
+            $(".bsh-middMenuLogo").attr("src","images/logo2.png");
+            $(".bsh-bsNavMain").removeClass("navbar-light").addClass("navbar-dark");
+            $(".bsh-slideImg").attr("src","images/2d.jpg");
+            $(".bsh-scItemImg").attr("src","images/wn2.jpg");
+            $(".bsh-scItemImgUn").attr("src","images/wn2.jpg");
+            $(".bsh-brandImg").attr("src","images/e4ed.png");
+            $(".bsh-footerLogo").attr("src","images/logo2.png");
+            // $(".bsh-btnColorIcoA").attr("title","قالب روشن");
+        }
+        if(themeNow === "css/mainDark.css"){
+            $("#bsh-themeid").attr("href","css/main.css");
+            $(".bsh-middMenuLogo").attr("src","images/logo2d.png");
+            $(".bsh-bsNavMain").removeClass("navbar-dark").addClass("navbar-light");
+            $(".bsh-slideImg").attr("src","images/5a.jpg");
+            $(".bsh-scItemImg").attr("src","images/wn.jpg");
+            $(".bsh-scItemImgUn").attr("src","images/wn.jpg");
+            $(".bsh-brandImg").attr("src","images/e4e.png");
+            $(".bsh-footerLogo").attr("src","images/logo2d.png");
+            // $(".bsh-btnColorIcoA").attr("title","قالب تیره");
+        }
+    }
+
+
+</script>
+
+</body>
+
+</html>
